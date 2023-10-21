@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interfaz de Usuario con Imágenes</title>
+    <link rel="icon" href="https://www.geekmi.news/__export/1617821924665/sites/debate/img/2021/04/07/zenosama1.jpg_423682103.jpg">
+
+    <style>
+        .imagen {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('https://www.fayerwayer.com/resizer/PkatdFwK43rBJu83XtrPN8z3Nn0=/800x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/metroworldnews/HSM2NJAATRG5JKQ7BNMKBRERHI.jpg');">
+    <nav> </nav><h1 style="background-color: rgb(255, 145, 145); color: #000000; font-weight: bold">Interfaz de Usuario con Imágenes</h1> </nav>
+    <label for="numero" style="background-color: #ffffff; color: #000000; font-weight: bold">Ingrese un número:</label>
+    <input type="text" id="numero" size="10">
+    <button id="mostrarImagen">Mostrar Imagen</button>
+    <br><br>
+    <div id="imagenContainer"></div>
+
+    <script>
+        document.getElementById('mostrarImagen').addEventListener('click', function () {
+            var numero = parseFloat(document.getElementById('numero').value);
+            var imagen = new Image();
+
+            if (Number.isInteger(numero)) {
+                if (numero % 2 === 0) {
+                    imagen.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8kxYCTDjHxgnR-U3crk42w52Cw20LevnNk9olC1aa10V-TQmQ';
+                } else {
+                    imagen.src = 'https://png.pngtree.com/png-clipart/20210118/ourlarge/pngtree-crying-face-3d-render-emoji-png-image_2748537.jpg';
+                }
+            } else {
+                imagen.src = 'https://png.pngtree.com/png-clipart/20210118/ourlarge/pngtree-shock-face-with-open-big-mouth-3d-render-emoji-png-image_2751773.jpg';
+            }
+
+            imagen.onload = function () {
+                var imagenContainer = document.getElementById('imagenContainer');
+                imagenContainer.innerHTML = '';
+                imagenContainer.appendChild(imagen);
+            };
+
+            imagen.onerror = function () {
+                alert('Error al cargar la imagen');
+            };
+        });
+    </script>
+    <footer style="background-color: rgb(191, 240, 255); color: #000000; font-weight: bold">
+        /*Solucion CLI (interfaz de línea de comandos) <br>
+        * FranciscoQuiñonez2558685 SENA CSF 2023<br>
+        * Par CaritaFeliz<br>
+        * Imapar CaritaTriste<br>
+        * Decimal 9,5 CaritaSorprendida<br>
+       */</footer>
+</body>
+
+</html>
